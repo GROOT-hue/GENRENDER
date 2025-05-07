@@ -113,7 +113,7 @@ def check_ats_score():
     resume_words = set(resume.lower().split())
     job_words = set(job_desc.lower().split())
     common = resume_words.intersection(job_words)
-    score = min(len(common) / len(job_words.size) * 100, 100)
+    score = min(len(common) / len(job_words) * 100, 100)
     
     return jsonify({'score': round(score, 2), 'matches': list(common)})
 
